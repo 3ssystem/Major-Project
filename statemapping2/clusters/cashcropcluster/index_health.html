@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>GA4SM</title>
+    <script type="text/javascript"  src="js_health/d3/d3.min.js"></script>
+    <script type="text/javascript"  src="js_health/topojson.v1.min.js"></script>
+    <link href="css_health/style.css" media="screen" rel="stylesheet" type="text/css">
+  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <link href="css_health/bootstrap.min.css" rel="stylesheet">
+    <link href="css_health/navbar-fixed-top.css" rel="stylesheet">
+    <script src="js_health/ie-emulation-modes-warning.js"></script>
+ <style>
+  div.state1
+  {
+    position:fixed;
+    left: 70px;
+    top: 75px;
+    right: 300;
+    left: 300;
+	}
+
+div.state2
+  {
+    position:fixed;
+    left: 175px;
+    top: 75px;
+    right: 300;
+    left: 300;
+	}
+
+div.state3
+  {
+    position:fixed;
+    left: 275px;
+    top: 75px;
+    right: 300;
+    left: 300;
+	}
+.right {
+    position: absolute;
+    right: 35px;
+    width: 150px;
+    padding: 4px;
+    top : 10px;
+}
+
+</style>
+<!--Legend Styles -->
+
+    
+</head>
+<body>
+
+
+
+<!--  Legend -->
+<canvas id="myCanvas" width="600" height="20"></canvas>
+    
+    <script>
+		
+      var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+      context.beginPath();
+      context.rect(20,5,50,30);
+      context.fillStyle = '#2ca25f';
+      context.fill();
+      context.lineWidth =7;
+      context.strokeStyle = 'white';
+      context.stroke();
+    ////////////////////////////////////////////
+
+  var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+      context.beginPath();
+      context.rect(130,5,50,30);
+      context.fillStyle = '#a63603';
+      context.fill();
+      context.lineWidth =7;
+      context.strokeStyle = 'white';
+      context.stroke();
+
+///////////////////////////////////////////////////////
+
+
+var canvas = document.getElementById('myCanvas');
+      var context = canvas.getContext('2d');
+      context.beginPath();
+      context.rect(230,5,50,30);
+      context.fillStyle = '#756bb1';
+      context.fill();
+      context.lineWidth =7;
+      context.strokeStyle = 'white';
+      context.stroke();
+
+
+
+
+
+
+      </script>
+    
+    
+<div class="state1">Cluster 1</div>
+<div class="state2">Cluster 2</div>
+<div class="state3">Cluster 3</div>
+
+
+
+
+
+
+
+<div id="tooltip" class="hidden">
+	
+<!--	 <button class ="btn btn-warning" > Do not try to touch me</button> -->
+
+    <p><strong id ="heading"></strong></p>
+    <p><span id="population"></span></p>
+    <p><span id="area"></span></p>
+    <p><span id ="secondary"></span></p>
+    <p><span id ="primary"></span></p>
+  </div>
+      <h2>CashCrop Clusters</h2>
+  <script type ="text/javascript" src ="js_health/mymap.js"></script>
+  
+  
+
+  <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+   	          <div class="navbar-header">
+
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://localhost/V2_copy/statemapping2/states/states2/Health_chloropleth/statemapping2/index_health.html">GA4SM</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="http://localhost/V2_copy/statemapping2/states/states2/Health_chloropleth/statemapping2/index_health.html">Home</a></li>
+            <li class="dropdown" >
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Charts<span class="caret"></span></a>
+		 <ul class="dropdown-menu">
+
+			<li><a onclick="district_level_index()">District level Index</a></li>
+
+			<script>
+			function district_level_index()
+			{
+				location.assign("http://localhost/FINAL");
+			}
+
+			</script>
+
+	<li><a onclick="state_level_index()">State Level Index</a></li>
+
+  	<script>
+function state_level_index()
+{
+    location.assign("http://localhost/State");
+}
+			
+			</script>
+
+
+
+		 </ul>
+
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Clustering <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a onclick="education_cluster()">Education Cluster</a></li>
+
+<script>
+function education_cluster()
+{
+    location.assign("http://localhost/V2_copy/statemapping2/clusters/education_cluster/index_health.html");
+}
+</script>
+
+
+                
+               <!--   <li><a href="cluster//index_health.html">Education Cluster</a></li> -->
+                <li><a onclick="cashcrop_cluster()">CashCrop Cluster</a></li>
+
+<script>
+function cashcrop_cluster()
+{
+    location.assign("http://localhost/V2_copy/statemapping2/clusters/cashcropcluster/index_health.html");
+}
+</script>
+                
+                <li><a onclick="cerialcrop_cluster()">CerialCrop Cluster</a></li>
+
+<script>
+function cerialcrop_cluster()
+{
+    location.assign("http://localhost/V2_copy/statemapping2/clusters/cereal_cluster/index_health.html");
+}
+</script>
+				<li><a onclick="transportation_cluster()">Transportation Cluster</a></li>
+
+<script>
+function transportation_cluster()
+{
+    location.assign("http://localhost/V2_copy/statemapping2/clusters/transportation_cluster/index_health.html");
+}
+</script>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Chloropeth <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+<!--                <li><a href="FINAL/index.php">Population Chloropleth</a></li> -->
+
+                 <li><a onclick="population_chloropleth()">Population Chloropleth</a></li>
+
+<script>
+function population_chloropleth()
+{
+    location.assign("http://localhost/V2_copy/statemapping2/chloropleth/Pop_Chloropleth/statemapping2/");
+}
+</script>
+
+<!--                <li><a href="FINAL/health.php">Health  Chloropleth</a></li> -->
+                 <li><a onclick="health_chloropleth()">Health Chloropleth</a></li>
+
+<script>
+function health_chloropleth()
+{
+    location.assign("http://localhost/V2_copy/statemapping2/chloropleth/Health_chloropleth/statemapping2/index_health.html");
+}
+</script>
+
+                <!-- <li><a href="FINAL/education.php">Education Chloropleth</a></li> -->
+                 <li><a onclick="education_chloropleth()">Health Chloropleth</a></li>
+
+<script>
+function education_chloropleth()
+{
+    location.assign("http://localhost/V2_copy/statemapping2/chloropleth/EducationChloropleth/statemapping2/");
+}
+</script>
+          <!--      <li><a href="FINAL/cashcrop.php">CashCrop Chloropleth</a></li> -->
+          <li><a onclick="cashcrop_chloropleth()">CashCrop Chloropleth</a></li>
+
+<script>
+function cashcrop_chloropleth()
+{
+    location.assign("http://localhost/V2_copy/statemapping2/chloropleth/cash_chloropleth%20/statemapping2/indexe.html");
+}
+</script>
+
+
+<li><a onclick="cashcrop_chloropleth()">CerealCrop Chloropleth</a></li>
+
+<script>
+function cerealcrop_chloropleth()
+{
+    location.assign("http://localhost/V2_copy/statemapping2/chloropleth/cereal_chloropleth/statemapping2/indexe.html");
+}
+</script>
+
+
+         <!--       <li><a href="FINAL/cerealcrop.php">CerealCrop Chloropleth</a></li> -->
+		<!--		<li><a href="FINAL/transport.php">Transport Chloropleth</a></li> -->
+                
+              </ul>
+            </li>
+           
+          </ul>
+ 
+   <input   class= "right" type ="number" placeholder ="Enter 6,7,9,11 " id ="userInput" onkeyPress = "onpress(this)" />
+
+<SCRIPT>
+function onpress(ele)
+{
+
+
+		//		var num = document.getElementById("userInput").value;
+				var no_of_states = document.getElementById("userInput").value;
+                if(event.keyCode == 13) {
+     
+
+			if(no_of_states=='6')
+			{
+				//alert("State6");
+				location.assign("http://localhost/V2_copy/statemapping2/states/states2/Health_chloropleth/statemapping2/index_health.html");			
+			
+			}
+
+		 else if(no_of_states=='7')
+			{
+
+				//alert("State7 :" +no_of_states);
+				location.replace("http://localhost/V2_copy/statemapping2/states/states3/Health_chloropleth/statemapping2/index_health.html?");			
+				//
+			}
+			
+	    else if(no_of_states =='9')
+			{
+				location.assign("http://localhost/V2_copy/statemapping2/states/states4/Health_chloropleth/statemapping2/index_health.html");			
+			}
+		else if(no_of_states='11'){
+
+
+			location.assign("http://localhost/V2_copy/statemapping2/states/states5/Health_chloropleth/statemapping2/index_health.html");
+		}	
+
+			else {
+
+				alert("Enter States only 6 , 7, 9, and 11")
+			}
+//}
+}
+else{
+	alert("Press Enter Key!!!");
+}
+}
+
+</SCRIPT>     
+</div>
+
+        </div><!--/.nav-collapse -->
+    
+      </div>
+    </nav>
+
+
+    <div class="container">
+    </div> 
+            
+    <!-- /container -->
+    <!-- Bootstrap core JavaScript
+       ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    <script src="js_health/jquery.min.js"></script>
+    <script src="js_health/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    
+    <script src="js_health/ie10-viewport-bug-workaround.js"></script>
+  
+  
+
+   <!--  <p>BElow Graphs will be shown</p>  -->
+ 
+   </body>
+</html>

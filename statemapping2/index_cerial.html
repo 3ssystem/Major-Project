@@ -1,0 +1,152 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>GA4SM</title>
+    <script type="text/javascript"  src="js_cerial/d3/d3.min.js"></script>
+    <script type="text/javascript"  src="js_cerial/topojson.v1.min.js"></script>
+    <link href="css_cerial/style.css" media="screen" rel="stylesheet" type="text/css">
+  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <link href="css_cerial/bootstrap.min.css" rel="stylesheet">
+    <link href="css_cerial/navbar-fixed-top.css" rel="stylesheet">
+    <script src="js_cerial/ie-emulation-modes-warning.js"></script>
+
+    
+</head>
+
+<body>
+
+<div id="tooltip" class="hidden">
+	
+<!--	 <button class ="btn btn-warning" > Do not try to touch me</button> -->
+
+    <p><strong id ="heading"></strong></p>
+    <p><span id="population"></span></p>
+    <p><span id="area"></span></p>
+    <p><span id ="secondary"></span></p>
+    <p><span id ="primary"></span></p>
+  </div>
+      <h2>Cerial Crops Chloropleth of Nepal</h2>
+ 
+  <script type ="text/javascript" src ="js_cerial/mymap.js"></script>
+  <script type ="text/javascript" src ="js_cerial/scatter.js"></script>
+  
+  <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+   	          <div class="navbar-header">
+
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">GA4SM</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="scatter.html">About</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Clustering <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="clusters/health_cluster/index_health.html">Health Cluster</a></li>
+                <li><a href="clusters/education_cluster/index_health.html">Education Cluster</a></li>
+                <li><a href="clusters/cashcropcluster/index_health.html">CashCrop  Cluster</a></li>
+                <li><a href="clusters/cereal_cluster/index_health.html">CerealCrop Cluster</a></li>
+				<li><a href="clusters/transportation_cluster/index_health.html">Transport Cluster</a></li>  
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Chloropleths <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="Pop_Chloropleth/statemapping2/index.html">Population Chloropleth</a></li>
+                <li><a href="Health_chloropleth/statemapping2/index_health.html">Health_chloropleth</a></li>
+                <li><a href="EducationChloropleth/statemapping2/index.html">Education chloropleth</a></li>
+                <!-- <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Another Satate</a></li>
+                <li><a href="#">Extreme</a></li> -->
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Charts <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="FINAL/index.php">Population</a></li>
+                <li><a href="FINAL/health.php">Health Index</a></li>
+                <li><a href="FINAL/education.php">Education Index</a></li>
+                <li><a href="FINAL/cashcrop.php">CashCrop Index</a></li>
+                <li><a href="FINAL/cerealcrop.php">CerealCrop Index</a></li>
+				<li><a href="FINAL/transport.php">Transport Index</a></li>
+                
+              </ul>
+            </li>
+           
+          </ul>
+ <SCRIPT LANGUAGE="JavaScript">
+	
+function onPress_ENTER(form)
+{
+        var keyPressed = event.keyCode || event.which;
+        //if(keyPressed==13)
+        //{
+            var no_of_states = form.states.value;
+			//alert ("You typed: " + no_of_states);
+			
+             // if(no_of_states=="2"){
+
+					//alert("State2");
+					document.write('<a href ="states/states2/Health_chloropleth/statemapping2/index_health.html">Click for States</a>');
+
+				//}    
+
+			
+			//keyPressed=null;
+            
+        //}
+        //else
+        //{
+         //   return false;
+        //}
+}
+
+</SCRIPT>
+    <div class ="container">
+<form  class=" navbar-form navbar-right"  class="form-horizontal" role="form" method="post" action="">
+    <div class="form-group col-xs-2 ">
+    <label for="code"></label>
+   <input   class="form-control" type ="number"  name ="states" placeholder ="Enter states" onkeypress=" onPress_ENTER(this.form)" />
+    <!--  <button type="submit" class="btn btn-default">Ok</button> -->
+  </div>
+    </form>
+
+</div>
+
+        </div><!--/.nav-collapse -->
+    
+      </div>
+    </nav>
+
+    <div class="container">
+    </div> 
+        
+    <script src="js_cerial/jquery.min.js"></script>
+    <script src="js_cerial/bootstrap.min.js"></script>
+    
+    
+    <script src="js_cerial/ie10-viewport-bug-workaround.js"></script>
+  
+  
+
+   <!--  <p>BElow Graphs will be shown</p>  -->
+ 
+   </body>
+</html>
