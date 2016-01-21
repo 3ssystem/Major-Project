@@ -19,7 +19,7 @@ It is a reasearch based project, this project is in our final year BE program.
       <li>Extract the downloaded Zip file.</li>
       <li>Put it into the directory /opt/lampp/htdocs.</li>
       <li>Open Mysql Server: type: `sudo /opt/lampp/lampp start`.</li>
-      <li>Type `localhost/PSDtoHTML` in any browser.</li>
+      <li>Type `localhost/statemapping2` in any browser.</li>
       <li>Enjoy!!.</li>
     </ul>
   </li>           
@@ -29,7 +29,7 @@ It is a reasearch based project, this project is in our final year BE program.
        <li>Extract the downloaded Zip file.</li>
        <li>Put it into the directory `C://program files/xampp/htdocs`.</li>
        <li>Start the Mysql Server.</li>
-       <li>Type `localhost/PSDtoHTML` in any browser.</li>
+       <li>Type `localhost/statemapping2` in any browser.</li>
        <li>Enjoy!!.</li>
 </ul>
 </li>
