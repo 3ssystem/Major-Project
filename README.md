@@ -1,5 +1,5 @@
 # Geographical Analysing for state mapping
-This is a reasearch based project, this project is in my final year BE program.
+It is a reasearch based project, this project is in our final year BE program.
 ##Technology used
 <ol>
   <li>HTML5</li>
